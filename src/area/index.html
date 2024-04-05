@@ -19,34 +19,44 @@
     <script src="https://js.arcgis.com/4.15/"></script>
 
     <script>
-        var point_template_path = {
+        var template_path = {
             title: "{Name}",
             content: "Bắt đầu từ : <b>{Start_point}</b>.<br/> Chiều dài: <b>{Length}</b>."
         };
 
 
-        var point_template_area = {
+        var template_area = {
             title: "{Name}",
             content: "Diện tích: <b>{Area}</b>.<br/> Dân số : <b>{Population}</b>"
 
+        };
+        var template_point = {
+            title: "{Name}",
+            content: "Diện tích :<b>{Area}</b>."
         };
         var jsondata = {
             "points": [
 
                 {
                     type: "point",
-                    longitude: 106.59227479438582,
-                    latitude: 11.151429721460149,
+                    longitude: 106.60839893283814,
+                    latitude: 11.153665827204495,
                     Name: "Bến Cát",
                     symbol: {
                         type: "simple-marker",
-                        color: [153, 51, 51],
+                        color: [226, 119, 40],
                         outline: {
                             color: [255, 255, 255],
                             width: 1
                         }
                     },
-                }
+
+                    Name: "Trường THPT Mĩ Phước",
+                    Location: "Tỉnh Bình Dương",
+                    Area: "21,50 km²",
+                    popupTemplate: template_point
+                },
+
             ],
             "lines": [
                 {
@@ -65,7 +75,7 @@
                     Location: "Tỉnh Bình Dương",
                     Start_point: "km 1879",
                     Length: "4.8km",
-                    popupTemplate: point_template_path
+                    popupTemplate: template_path
                     ,
                 }
             ],
@@ -98,7 +108,7 @@
                             width: 1
                         }
                     },
-                    popupTemplate: point_template_area
+                    popupTemplate: template_area
                 },
 
 
